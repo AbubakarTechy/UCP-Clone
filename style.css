@@ -223,3 +223,69 @@ h1, h2, h3 { font-family: "Manrope", "DM Sans", sans-serif; }
   color: rgba(255,255,255,.86);
   font-size: .75rem;
 }
+
+
+.page-shell { width: min(1160px, calc(100% - 48px)); margin: 38px auto 70px; }
+.welcome-row, .section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.welcome-row { margin-bottom: 24px; }
+.welcome-row h1 { margin-bottom: 5px; font-size: clamp(1.7rem, 3vw, 2.25rem); letter-spacing: -.04em; }
+.welcome-row .muted { margin-bottom: 0; }
+.term-chip, .subtle-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: .78rem;
+  white-space: nowrap;
+}
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #2ca477; }
+.profile-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.profile-identity { display: flex; align-items: center; gap: 18px; }
+.avatar {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #e5f1fb;
+  color: var(--navy);
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.profile-identity h2 { margin-bottom: 2px; font-size: 1.2rem; }
+.profile-identity p { margin-bottom: 3px; font-size: .88rem; }
+.program { color: var(--ink); }
+.standing { min-width: 175px; padding-left: 26px; border-left: 1px solid var(--line); }
+.field-label, .stat-label { display: block; color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.standing-value { display: block; margin: 4px 0; color: #21845e; font-family: "Manrope", sans-serif; font-size: 1.2rem; }
+.standing .muted { font-size: .76rem; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 18px 0 24px; }
+.stat-card {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.stat-value { display: block; margin: 7px 0 2px; color: var(--navy); font-family: "Manrope", sans-serif; font-size: 1.8rem; letter-spacing: -.04em; }
+.stat-note { color: var(--muted); font-size: .77rem; }
