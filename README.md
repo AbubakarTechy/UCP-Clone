@@ -37,6 +37,16 @@ For a local development server, you can also use the VS Code Live Server extensi
 | `logo_org.png` | Logo image used in the demo |
 | `download` | Original project asset |
 
+## Interface features
+
+- Semantic page landmarks and descriptive navigation labels.
+- Student overview with academic summary cards and a sample class schedule.
+- Course cards with attendance progress indicators and credit-hour labels.
+- Live course search across course names, instructors, and course codes.
+- Keyboard support: press Escape in the search field to clear the filter.
+- Responsive layouts for desktop, tablet, and mobile screens.
+- Reduced-motion preference support and visible keyboard focus styles.
+
 ## Scope and privacy
 
 This repository is a static front-end demo. It has no authentication, backend, database, or official university integration. Do not enter real passwords or sensitive student information into a static demo.
