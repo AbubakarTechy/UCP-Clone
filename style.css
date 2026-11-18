@@ -289,3 +289,65 @@ h1, h2, h3 { font-family: "Manrope", "DM Sans", sans-serif; }
 }
 .stat-value { display: block; margin: 7px 0 2px; color: var(--navy); font-family: "Manrope", sans-serif; font-size: 1.8rem; letter-spacing: -.04em; }
 .stat-note { color: var(--muted); font-size: .77rem; }
+
+
+.schedule-panel, .courses-section {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.schedule-panel { margin-bottom: 24px; }
+.section-heading { margin-bottom: 20px; }
+.section-heading h2 { margin-bottom: 4px; font-size: 1.35rem; letter-spacing: -.025em; }
+.section-heading .muted { margin-bottom: 0; font-size: .86rem; }
+.schedule-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fbfcfe;
+}
+.schedule-time { color: var(--blue); font-size: .82rem; font-weight: 700; white-space: nowrap; }
+.schedule-item h3 { margin-bottom: 2px; font-size: .92rem; }
+.schedule-item .muted { margin-bottom: 0; font-size: .78rem; }
+.courses-section { scroll-margin-top: 24px; }
+.courses-heading { align-items: flex-end; }
+.search-box input {
+  width: 230px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  background: #fbfcfe;
+  color: var(--ink);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.search-box input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(35,118,184,.12); }
+.course-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.course-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.course-card:hover { transform: translateY(-3px); border-color: #c8dbea; box-shadow: 0 12px 24px rgba(19,48,76,.08); }
+.course-topline, .attendance-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.course-code { color: var(--blue); font-size: .73rem; font-weight: 700; letter-spacing: .04em; }
+.credit-pill { padding: 4px 8px; border-radius: 999px; background: #eef4f9; color: #587188; font-size: .68rem; }
+.course-card h3 { min-height: 48px; margin: 15px 0 5px; font-size: 1rem; line-height: 1.4; }
+.instructor { margin-bottom: 20px; color: var(--muted); font-size: .82rem; }
+.attendance-row { margin-bottom: 8px; color: var(--muted); font-size: .77rem; }
+.attendance-row strong { color: var(--ink); font-size: .82rem; }
+.progress-track { height: 7px; overflow: hidden; border-radius: 999px; background: #edf1f5; }
+.progress-track span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #2376b8, #51a1d5); }
+.term-note { margin: 12px 0 0; color: #8795a3; font-size: .7rem; }
+.empty-state { margin: 24px 0 4px; color: var(--muted); text-align: center; }
+.site-footer { padding: 22px 24px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .75rem; }
+.site-footer p { margin: 3px 0; }
