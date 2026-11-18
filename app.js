@@ -22,3 +22,27 @@ if (courseSearch) {
     filterCourses(event.currentTarget.value);
   });
 }
+
+const navigationLinks = [...document.querySelectorAll(".nav-link")];
+
+navigationLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navigationLinks.forEach((item) => {
+      item.classList.remove("is-active");
+      item.removeAttribute("aria-current");
+    });
+
+    link.classList.add("is-active");
+    link.setAttribute("aria-current", "page");
+  });
+});
+
+if (courseSearch) {
+  courseSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      courseSearch.value = "";
+      filterCourses("");
+      courseSearch.blur();
+    }
+  });
+}
