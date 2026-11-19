@@ -193,6 +193,30 @@ h1, h2, h3 { font-family: "Manrope", "DM Sans", sans-serif; }
   transition: border-color .2s ease, box-shadow .2s ease;
 }
 .search-box input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(35,118,184,.12); }
+
+.search-box { display: flex; align-items: center; gap: 8px; }
+.search-box input { width: 210px; }
+.clear-search, .control-label select, .theme-toggle {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: .8rem;
+}
+.clear-search { color: var(--blue); cursor: pointer; }
+.clear-search:disabled { cursor: not-allowed; opacity: .45; }
+.control-label { display: grid; gap: 5px; color: var(--muted); font-size: .72rem; font-weight: 600; }
+.control-label select { min-width: 132px; cursor: pointer; }
+.results-summary { margin: -4px 0 14px; color: var(--muted); font-size: .78rem; }
+.theme-toggle { border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.1); color: #fff; cursor: pointer; }
+.clear-search:focus-visible, .control-label select:focus-visible, .theme-toggle:focus-visible {
+  outline: 3px solid rgba(35,118,184,.3);
+  outline-offset: 2px;
+}
+
 .course-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .course-card {
   min-width: 0;
