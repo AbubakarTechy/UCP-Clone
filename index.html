@@ -106,6 +106,13 @@
           <input id="course-search" type="search" placeholder="Search courses..." autocomplete="off">
           <button class="clear-search" id="clear-search" type="button" aria-label="Clear course search">Clear</button>
         </label>
+        <label class="control-label" for="course-sort">Sort by
+          <select id="course-sort">
+            <option value="default">Default order</option>
+            <option value="name">Course name</option>
+            <option value="attendance">Attendance</option>
+          </select>
+        </label>
       </div>
 
       <p class="results-summary" id="course-results" role="status" aria-live="polite">Showing all 6 sample courses</p>
