@@ -296,6 +296,10 @@ html[data-theme="dark"] .standing-value { color: #71d2a9; }
   .schedule-item { align-items: flex-start; flex-direction: column; gap: 6px; }
   .courses-heading { gap: 14px; }
   .search-box, .search-box input { width: 100%; }
+  .search-box { align-items: stretch; }
+  .search-box input { min-width: 0; }
+  .control-label, .control-label select { width: 100%; }
+  .theme-toggle { margin-left: auto; }
   .course-card h3 { min-height: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
