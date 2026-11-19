@@ -43,7 +43,11 @@ For a local development server, you can also use the VS Code Live Server extensi
 - Student overview with academic summary cards and a sample class schedule.
 - Course cards with attendance progress indicators and credit-hour labels.
 - Live course search across course names, instructors, and course codes.
-- Keyboard support: press Escape in the search field to clear the filter.
+- Attendance filtering with 90% and 95% threshold options.
+- Course sorting by default order, course name, or attendance percentage.
+- Live result count announced through an accessible status region.
+- One-click search clearing and Escape-key support.
+- Light and dark themes, with the selected theme saved locally when browser storage is available.
 - Responsive layouts for desktop, tablet, and mobile screens.
 - Reduced-motion preference support and visible keyboard focus styles.
 
