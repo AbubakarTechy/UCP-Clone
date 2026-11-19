@@ -242,6 +242,29 @@ h1, h2, h3 { font-family: "Manrope", "DM Sans", sans-serif; }
 .site-footer p { margin: 3px 0; }
 
 
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --navy: #102c43;
+  --navy-deep: #081d2d;
+  --blue: #79b9e8;
+  --ink: #e5edf5;
+  --muted: #a4b4c3;
+  --surface: #172b3d;
+  --page: #0d1b29;
+  --line: #2b4053;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .18);
+}
+html[data-theme="dark"] .schedule-item,
+html[data-theme="dark"] .search-box input { background: #122437; }
+html[data-theme="dark"] .avatar,
+html[data-theme="dark"] .credit-pill { background: #203c54; color: #c7e3f8; }
+html[data-theme="dark"] .course-card { background: var(--surface); }
+html[data-theme="dark"] .progress-track { background: #2a4053; }
+html[data-theme="dark"] .term-chip,
+html[data-theme="dark"] .subtle-tag { background: var(--surface); }
+html[data-theme="dark"] .standing-value { color: #71d2a9; }
+
 @media (max-width: 900px) {
   .site-header { gap: 22px; padding-inline: 24px; }
   .page-shell { width: min(100% - 32px, 760px); margin-top: 28px; }
