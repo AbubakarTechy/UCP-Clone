@@ -40,13 +40,44 @@ function updateCourses() {
   if (clearSearch) clearSearch.disabled = !courseSearch?.value;
 }
 
-courseSearch?.addEventListener("input", updateCourses);
-attendanceFilter?.addEventListener("change", updateCourses);
-courseSort?.addEventListener("change", updateCourses);
+function restoreCoursePreferences() {
+  try {
+    if (courseSearch) courseSearch.value = localStorage.getItem("ucp-course-query") || "";
+    if (attendanceFilter) attendanceFilter.value = localStorage.getItem("ucp-attendance-filter") || "all";
+    if (courseSort) courseSort.value = localStorage.getItem("ucp-course-sort") || "default";
+  } catch {
+    // Preferences remain optional when browser storage is unavailable.
+  }
+}
+
+function saveCoursePreferences() {
+  try {
+    localStorage.setItem("ucp-course-query", courseSearch?.value || "");
+    localStorage.setItem("ucp-attendance-filter", attendanceFilter?.value || "all");
+    localStorage.setItem("ucp-course-sort", courseSort?.value || "default");
+  } catch {
+    // Filtering and sorting continue to work without persistent storage.
+  }
+}
+
+restoreCoursePreferences();
+courseSearch?.addEventListener("input", () => {
+  saveCoursePreferences();
+  updateCourses();
+});
+attendanceFilter?.addEventListener("change", () => {
+  saveCoursePreferences();
+  updateCourses();
+});
+courseSort?.addEventListener("change", () => {
+  saveCoursePreferences();
+  updateCourses();
+});
 
 clearSearch?.addEventListener("click", () => {
   if (courseSearch) {
     courseSearch.value = "";
+    saveCoursePreferences();
     courseSearch.focus();
   }
   updateCourses();
@@ -55,6 +86,7 @@ clearSearch?.addEventListener("click", () => {
 courseSearch?.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     courseSearch.value = "";
+    saveCoursePreferences();
     updateCourses();
     courseSearch.blur();
   }
