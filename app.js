@@ -132,4 +132,16 @@ exportCourses?.addEventListener("click", () => {
   URL.revokeObjectURL(url);
 });
 
+
+document.addEventListener("keydown", (event) => {
+  const target = event.target;
+  const isTyping = target instanceof HTMLElement &&
+    (target.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName));
+
+  if (event.key === "/" && !isTyping && !event.ctrlKey && !event.metaKey && !event.altKey) {
+    event.preventDefault();
+    courseSearch?.focus();
+  }
+});
+
 updateCourses();
