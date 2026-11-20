@@ -102,4 +102,34 @@ themeToggle?.addEventListener("click", () => {
 const printDashboard = document.querySelector("#print-dashboard");
 printDashboard?.addEventListener("click", () => window.print());
 
+
+const exportCourses = document.querySelector("#export-courses");
+
+function csvCell(value) {
+  return `"${String(value).replaceAll('"', '""')}"`;
+}
+
+exportCourses?.addEventListener("click", () => {
+  const headers = ["Course code", "Course name", "Instructor", "Credits", "Attendance"];
+  const rows = courseCards
+    .filter((card) => !card.hidden)
+    .map((card) => [
+      card.querySelector(".course-code")?.textContent.trim() || "",
+      card.querySelector("h3")?.textContent.trim() || "",
+      card.querySelector(".instructor")?.textContent.trim() || "",
+      card.querySelector(".credit-pill")?.textContent.trim() || "",
+      `${getAttendance(card)}%`,
+    ]);
+  const csv = [headers, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n");
+  const file = new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(file);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "ucp-demo-courses.csv";
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+});
+
 updateCourses();
