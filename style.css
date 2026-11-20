@@ -127,6 +127,21 @@ h1, h2, h3 { font-family: "Manrope", "DM Sans", sans-serif; }
   white-space: nowrap;
 }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #2ca477; }
+.dashboard-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+.utility-button {
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--blue);
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.utility-button:hover { border-color: var(--blue); }
+.utility-button:focus-visible { outline: 3px solid rgba(35,118,184,.25); outline-offset: 2px; }
 .profile-panel {
   display: flex;
   align-items: center;
