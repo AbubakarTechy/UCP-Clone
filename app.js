@@ -49,7 +49,10 @@ clearSearch?.addEventListener("click", () => {
     courseSearch.value = "";
     courseSearch.focus();
   }
-  updateCourses();
+  const printDashboard = document.querySelector("#print-dashboard");
+printDashboard?.addEventListener("click", () => window.print());
+
+updateCourses();
 });
 
 courseSearch?.addEventListener("keydown", (event) => {
