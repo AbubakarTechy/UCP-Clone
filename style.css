@@ -48,6 +48,20 @@ h1, h2, h3 { font-family: "Manrope", "DM Sans", sans-serif; }
 [hidden] { display: none !important; }
 
 
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  padding: 10px 14px;
+  transform: translateY(-150%);
+  border-radius: 8px;
+  background: #fff;
+  color: #123f68;
+  font-weight: 700;
+}
+.skip-link:focus { transform: translateY(0); }
+
 .site-header {
   min-height: 76px;
   display: flex;
