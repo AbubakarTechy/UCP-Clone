@@ -49,10 +49,7 @@ clearSearch?.addEventListener("click", () => {
     courseSearch.value = "";
     courseSearch.focus();
   }
-  const printDashboard = document.querySelector("#print-dashboard");
-printDashboard?.addEventListener("click", () => window.print());
-
-updateCourses();
+  updateCourses();
 });
 
 courseSearch?.addEventListener("keydown", (event) => {
@@ -101,5 +98,8 @@ themeToggle?.addEventListener("click", () => {
     // The toggle still works for the current page when storage is unavailable.
   }
 });
+
+const printDashboard = document.querySelector("#print-dashboard");
+printDashboard?.addEventListener("click", () => window.print());
 
 updateCourses();
