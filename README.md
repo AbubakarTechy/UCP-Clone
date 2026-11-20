@@ -46,7 +46,11 @@ For a local development server, you can also use the VS Code Live Server extensi
 - Attendance filtering with 90% and 95% threshold options.
 - Course sorting by default order, course name, or attendance percentage.
 - Live result count announced through an accessible status region.
-- One-click search clearing and Escape-key support.
+- One-click search clearing, Escape-key support, and `/` shortcut to focus course search.
+- Course search, sort order, and attendance filter preferences are remembered locally when browser storage is available.
+- Export the currently visible course list to a CSV file for spreadsheet use.
+- Print-friendly dashboard action using the browser print dialog.
+- Keyboard-accessible skip link for moving directly to the main dashboard.
 - Light and dark themes, with the selected theme saved locally when browser storage is available.
 - Responsive layouts for desktop, tablet, and mobile screens.
 - Reduced-motion preference support and visible keyboard focus styles.
