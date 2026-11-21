@@ -334,3 +334,24 @@ html[data-theme="dark"] .standing-value { color: #71d2a9; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+@media print {
+  @page { margin: 14mm; }
+  body { background: #fff; color: #182b3d; }
+  .site-header, .site-footer, .dashboard-actions, .search-box,
+  .control-label, .results-summary, .empty-state, .theme-toggle {
+    display: none !important;
+  }
+  .page-shell { width: 100%; margin: 0; }
+  .profile-panel, .stat-card, .schedule-panel, .courses-section, .course-card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .course-card { border-color: #cbd5df; }
+  .courses-section { padding: 12px 0; border: 0; }
+  .schedule-panel { padding: 12px 0; border: 0; }
+  a { text-decoration: none; }
+}
