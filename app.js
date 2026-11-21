@@ -136,13 +136,14 @@ function setTheme(isDark) {
     themeToggle.textContent = isDark ? "Light mode" : "Dark mode";
   }
 }
-let savedTheme = "light";
+let savedTheme = null;
 try {
-  savedTheme = localStorage.getItem("ucp-clone-theme") || "light";
+  savedTheme = localStorage.getItem("ucp-clone-theme");
 } catch {
   // Storage may be unavailable in private or restricted browsing contexts.
 }
-setTheme(savedTheme === "dark");
+const systemPrefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches || false;
+setTheme(savedTheme ? savedTheme === "dark" : systemPrefersDark);
 themeToggle?.addEventListener("click", () => {
   const isDark = document.documentElement.dataset.theme !== "dark";
   setTheme(isDark);
