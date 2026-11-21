@@ -11,6 +11,13 @@ function getAttendance(card) {
   return Number(card.querySelector('[role="progressbar"]')?.getAttribute("aria-valuenow") || 0);
 }
 
+function updateAttendanceSummary() {
+  const averageElement = document.querySelector("#attendance-average");
+  if (!averageElement || courseCards.length === 0) return;
+  const average = courseCards.reduce((total, card) => total + getAttendance(card), 0) / courseCards.length;
+  averageElement.textContent = `${Math.round(average)}%`;
+}
+
 function updateCourses() {
   const query = courseSearch?.value.trim().toLocaleLowerCase() || "";
   const minimumAttendance = attendanceFilter?.value === "all"
@@ -63,7 +70,8 @@ function saveCoursePreferences() {
 restoreCoursePreferences();
 courseSearch?.addEventListener("input", () => {
   saveCoursePreferences();
-  updateCourses();
+  updateAttendanceSummary();
+updateCourses();
 });
 attendanceFilter?.addEventListener("change", () => {
   saveCoursePreferences();
