@@ -20,13 +20,17 @@ function updateAttendanceSummary() {
 
 function updateCourses() {
   const query = courseSearch?.value.trim().toLocaleLowerCase() || "";
-  const minimumAttendance = attendanceFilter?.value === "all"
+  const selectedAttendance = attendanceFilter?.value || "all";
+  const minimumAttendance = selectedAttendance === "all" || selectedAttendance === "below90"
     ? 0
-    : Number(attendanceFilter.value);
+    : Number(selectedAttendance);
 
   const visibleCards = courseCards.filter((card) => {
     const matchesQuery = card.textContent.toLocaleLowerCase().includes(query);
-    const matchesAttendance = getAttendance(card) >= minimumAttendance;
+    const attendance = getAttendance(card);
+    const matchesAttendance = selectedAttendance === "below90"
+      ? attendance < 90
+      : attendance >= minimumAttendance;
     card.hidden = !(matchesQuery && matchesAttendance);
     return matchesQuery && matchesAttendance;
   });
