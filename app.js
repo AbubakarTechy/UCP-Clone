@@ -95,6 +95,16 @@ clearSearch?.addEventListener("click", () => {
   updateCourses();
 });
 
+const resetCourseFilters = document.querySelector("#reset-course-filters");
+resetCourseFilters?.addEventListener("click", () => {
+  if (courseSearch) courseSearch.value = "";
+  if (attendanceFilter) attendanceFilter.value = "all";
+  if (courseSort) courseSort.value = "default";
+  saveCoursePreferences();
+  updateCourses();
+  courseSearch?.focus();
+});
+
 courseSearch?.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     courseSearch.value = "";
