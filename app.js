@@ -74,8 +74,7 @@ function saveCoursePreferences() {
 restoreCoursePreferences();
 courseSearch?.addEventListener("input", () => {
   saveCoursePreferences();
-  updateAttendanceSummary();
-updateCourses();
+  updateCourses();
 });
 attendanceFilter?.addEventListener("change", () => {
   saveCoursePreferences();
@@ -199,4 +198,5 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+updateAttendanceSummary();
 updateCourses();
