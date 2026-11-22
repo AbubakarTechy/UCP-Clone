@@ -226,5 +226,6 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+addAttendanceStatusLabels();
 updateAttendanceSummary();
 updateCourses();
