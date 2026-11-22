@@ -158,6 +158,19 @@ try {
 }
 const systemPrefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches || false;
 setTheme(savedTheme ? savedTheme === "dark" : systemPrefersDark);
+if (window.matchMedia) {
+  const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  colorScheme.addEventListener?.("change", (event) => {
+    let hasSavedTheme = false;
+    try {
+      hasSavedTheme = localStorage.getItem("ucp-clone-theme") !== null;
+    } catch {
+      // Follow the system preference when storage is unavailable.
+    }
+    if (!hasSavedTheme) setTheme(event.matches);
+  });
+}
+
 themeToggle?.addEventListener("click", () => {
   const isDark = document.documentElement.dataset.theme !== "dark";
   setTheme(isDark);
