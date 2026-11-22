@@ -11,6 +11,21 @@ function getAttendance(card) {
   return Number(card.querySelector('[role="progressbar"]')?.getAttribute("aria-valuenow") || 0);
 }
 
+function addAttendanceStatusLabels() {
+  courseCards.forEach((card) => {
+    const attendance = getAttendance(card);
+    const row = card.querySelector(".attendance-row");
+    if (!row || row.querySelector(".attendance-status")) return;
+
+    const status = document.createElement("span");
+    status.className = "attendance-status";
+    status.textContent = attendance < 90 ? "Needs attention" : attendance < 95 ? "On track" : "Excellent";
+    status.dataset.level = attendance < 90 ? "low" : attendance < 95 ? "medium" : "high";
+    status.setAttribute("aria-label", `Attendance status: ${status.textContent}`);
+    row.insertAdjacentElement("afterend", status);
+  });
+}
+
 function updateAttendanceSummary() {
   const averageElement = document.querySelector("#attendance-average");
   if (!averageElement || courseCards.length === 0) return;
