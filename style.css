@@ -263,6 +263,21 @@ h1, h2, h3 { font-family: "Manrope", "DM Sans", sans-serif; }
 .instructor { margin-bottom: 20px; color: var(--muted); font-size: .82rem; }
 .attendance-row { margin-bottom: 8px; color: var(--muted); font-size: .77rem; }
 .attendance-row strong { color: var(--ink); font-size: .82rem; }
+.attendance-status {
+  display: inline-block;
+  margin: -2px 0 10px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: .68rem;
+  font-weight: 700;
+}
+.attendance-status[data-level="low"] { background: #fff0ed; color: #b54732; }
+.attendance-status[data-level="medium"] { background: #fff7df; color: #8a6415; }
+.attendance-status[data-level="high"] { background: #e8f7ef; color: #21734e; }
+html[data-theme="dark"] .attendance-status[data-level="low"] { background: #4a2a2b; color: #ffb7a9; }
+html[data-theme="dark"] .attendance-status[data-level="medium"] { background: #493d24; color: #f4d58a; }
+html[data-theme="dark"] .attendance-status[data-level="high"] { background: #1d4437; color: #9ce0bf; }
+
 .progress-track { height: 7px; overflow: hidden; border-radius: 999px; background: #edf1f5; }
 .progress-track span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #2376b8, #51a1d5); }
 .term-note { margin: 12px 0 0; color: #8795a3; font-size: .7rem; }
